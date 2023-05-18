@@ -1,0 +1,152 @@
+<html>
+    <body bgcolor="#2E86C1">  
+        <center>
+        <img src="../Imagenes/MapacheComiendoUvas.gif" alt="Imagen de presentacion ☺" style="height: 390px; width: 440px;">
+        <p> Hola, mi nombre es: <strong> Diego Jesus Hernandez Palma </strong> y soy un guia explorador </p>
+        <p></p>
+        <p> Estoy en:  <strong> DSM - 3B </strong> ☺ </p>
+        <p></p>
+        <p> Mi correo es: <strong> 20223tn059@utez.edu.mx </strong>  </p>
+        <p></p>
+        <p> Mi matricula es:  <strong> 20223tn059 </strong>  </p>
+        <p></p>
+        <p> Mis Estudios son: Vengo de la Preparatoria <strong>"Bernabe L. de Elias"</strong> despues pase por la <strong>"UAEM"</strong> en la carrera de "Ciencias computacionales" y ahora estoy estudiando en la <strong>"UTEZ"</strong> ♣ </p>
+        <p></p>
+        <p> Mis pasatiempos: </p>
+    
+        <ul>
+        <p> <strong> * Jugar Videojuegos </strong> </p>
+        <p> <strong> * Escuchar musica </strong> </p>
+        <p> <strong> * Jugar con mi perro "Altair" ♥ </strong>  </p>
+        </ul>
+        <p></p>
+        </center>
+
+        <!-- Boton para Cambiar color de fondo -->
+        
+        <script>
+            // Variable para alternar los colores de fondo
+            var fondoOriginal = true;
+          
+            // Función para cambiar el fondo de la página
+            function cambiarFondo() {
+              // Obtener el elemento <body> de la página
+              var body = document.querySelector('body');
+          
+              // Verificar el estado actual de la variable fondoOriginal
+              if (fondoOriginal) {
+                // Cambiar el fondo a un color diferente
+                body.style.backgroundColor = 'grey';
+                fondoOriginal = false;
+              } else {
+                // Restaurar el fondo original
+                body.style.backgroundColor = ''; // Dejarlo vacío para restaurar el fondo por defecto
+                fondoOriginal = true;
+              }
+            }
+          </script>
+
+          <button id="cambiarFondoBoton" onclick="cambiarFondo()">Cambiar Fondo xd</button>
+          <p></p>
+
+          <!-- Boton para cambiar el Texto -->
+          <script>
+            // Variable con la cadena predefinida
+            var nuevaCadena = "Menti soy malo >:(";
+          </script>
+          
+          <script>
+            // Variable con la cadena predefinida
+            var nuevaCadena = "Menti soy malo >:(";
+          
+            // Función para cambiar el texto del elemento <p>
+            function cambiarTexto() {
+              // Obtener el elemento <p> utilizando su ID
+              var parrafo = document.getElementById('miParrafo');
+          
+              // Cambiar el texto del elemento <p>
+              parrafo.innerHTML = nuevaCadena;
+            }
+          </script>
+          
+          <button id="cambiarTextoBoton" onclick="cambiarTexto()">Cambiar Texto</button>
+
+          <!-- Boton para restaurar el texto cambiado -->
+          <script>
+            // Variable con la cadena predefinida
+            var nuevaCadena = "Menti soy malo ☻";
+          
+            // Función para cambiar el texto del elemento <p>
+            function cambiarTexto() {
+              // Obtener el elemento <p> utilizando su ID
+              var parrafo = document.getElementById('miParrafo');
+          
+              // Cambiar el texto del elemento <p>
+              parrafo.innerHTML = nuevaCadena;
+            }
+          
+            // Función para restaurar el texto original
+            function restaurarTexto() {
+              // Obtener el elemento <p> utilizando su ID
+              var parrafo = document.getElementById('miParrafo');
+          
+              // Restaurar el texto original del elemento <p>
+              parrafo.innerHTML = "Hola soy bueno ☺";
+            }
+          </script>
+          
+          <button id="restaurarTextoBoton" onclick="restaurarTexto()">Restaurar Texto</button>
+
+          <!-- Texto a cambiar -->
+          <p id="miParrafo"> Hola soy bueno ☺ </p>
+          <p></p>
+          
+           <!-- Ocultar Hola Mundo -->
+
+         <script>
+            // Función para ocultar el mensaje
+            function ocultarMensaje() {
+              var mensaje = document.getElementById('HolaM');
+              mensaje.style.display = 'none';
+            }
+          </script>
+          
+          <button id="ocultarBoton" onclick="ocultarMensaje()">Ocultar Mensaje</button>
+          <h2 id="HolaM"> Hola Mundo!! </h2>
+          <p></p>
+
+          <!-- Botones para cambiar imagenes-->
+          <img id="miImagen" src="../Imagenes/DoomEternal.jpg" alt="Mi imagen">
+
+            <script>
+                // Función para cambiar el atributo src de la imagen
+                function cambiarImagen() {
+                  var imagen = document.getElementById('miImagen');
+                  imagen.src = '../Imagenes/AnimalCroasing.jpeg';
+                }
+              
+                // Función para restaurar el atributo src de la imagen
+                function restaurarImagen() {
+                  var imagen = document.getElementById('miImagen');
+                  imagen.src = '../Imagenes/DoomEternal.jpg';
+                }
+              </script>
+
+         <button id="cambiarImagenBoton" onclick="cambiarImagen()">Cambiar Imagen</button>
+         <button id="restaurarImagenBoton" onclick="restaurarImagen()">Restaurar Imagen</button>
+
+
+          <!-- miDiv -->
+          <div id="miDiv"></div>
+
+          <button onclick="escribirTexto()">Escribir Texto</button>
+
+          <script>
+            function escribirTexto() {
+              var div = document.getElementById('miDiv');
+              div.innerHTML = '<h1>Este texto no lo escribió Pino Cosmico, lo escribió JavaScript</h1>';
+            }
+          </script>
+          
+    </body>
+</html>
