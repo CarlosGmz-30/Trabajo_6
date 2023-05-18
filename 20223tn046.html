@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color: #012b30;
+        color: aqua;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      strong,
+      h1 {
+        color: antiquewhite;
+      }
+
+      a {
+        width: 20%;
+        display: block;
+        padding: 10px 30px;
+        border-radius: 15px;
+        border: none;
+        background: blue;
+        color: white;
+        margin: auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+      }
+      a:hover {
+        background-color: aquamarine;
+        border: 2px solid blue;
+        color: blue;
+      }
+
+      .enca {
+        background-color: #00115f;
+        margin: 10px auto;
+        padding: 10px;
+        font-size: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        border: none;
+        border-radius: 50px;
+      }
+
+      .pro {
+        background-color: #00115f;
+        width: 30%;
+        margin: 60px auto;
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 22px;
+      }
+
+      .enca img {
+        height: 400px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <title>20223TN046</title>
+  </head>
+  <body>
+    <div class="enca">
+      <h1>Hola, este soy yo</h1>
+      <img src="../Imagenes/20221117_203011.jpg" alt="Yo" />
+    </div>
+
+    <div class="pro">
+      <strong>Nombre:</strong><br />
+      <p>Alan Manuel Benítez García</p>
+    </div>
+    <div class="pro">
+      <strong>Carrera: </strong><br />
+      <p>Desarrollo de Software Multuplataforma</p>
+    </div>
+    <div class="pro">
+      <strong>Grado y Grupo:</strong><br />
+      <p>3°B</p>
+    </div>
+    <div class="pro">
+      <strong>Correo Electronico:</strong><br />
+      <p>20223tn046@utez.edu.mx</p>
+    </div>
+    <div class="pro">
+      <strong>Matricula:</strong><br />
+      <p>20223TN046</p>
+    </div>
+    <div class="pro">
+      <strong>Estudios Previos:</strong>
+      <br />
+      <p>
+        - CBTis 223 Tecnico en Programacion
+        <br />
+        - Secundaria Tecnica Numero 27
+      </p>
+    </div>
+
+    <div class="pro">
+      <strong>Pasatiempos: </strong>
+      <br />
+      <p>
+        Ver anime, jugar videojuegos, escuchar musica, estar con mi novia y de
+        ves en cuando tocar guitarra :D
+      </p>
+    </div>
+    <div class="pro">
+      <strong>Mi videojuego favorito</strong>
+      <br />
+      <img id="imagen1" src="../Imagenes/minecraft_2.jpg" alt="Minecraft" />
+      <button id="boton1">Minecraft 1</button>
+      <button id="boton2">Minecraft 2</button>
+    </div>
+
+    <br />
+    <a href="../index.html">Pagina Principal</a>
+
+    <br>
+    <br>
+    <center>
+    <button id="cambiarColor" onclick="changeColor()">
+      Cambiame de Color :3
+    </button>
+
+    <br />
+    <br />
+
+    <p id="changeText">Tu eres milagro y yo soy el diluvio</p>
+    <button id="changeText1" onclick="changeText()">
+      Cambia lo que digo ;b
+    </button>
+
+    <br />
+    <br />
+
+    <h2 id="HolaBoton">
+      <button onclick="holaMundo()">¿?</button>
+    </h2>
+
+    <div id="miDiv"></div>
+    <button onclick="escribirTexto()">Hola soy una inteligencia artificial</button>
+    
+
+    <br><br>
+    Galeria des mi equipo Pokemon ideal y legendario favorito
+    <br>
+    <p>POKEMON</p>
+    
+
+
+  </center>
+
+    <script>
+      /*cambio de imagen --------------------------------------------------------------------------------*/
+      const boton1 = document.getElementById("boton1");
+      const boton2 = document.getElementById("boton2");
+      const imagen1 = document.getElementById("imagen1");
+      const imagen2 = document.getElementById("imagen2");
+
+      boton1.addEventListener("click", () => {
+        imagen1.src = "../Imagenes/minecraft_2.jpg ";
+      });
+
+      boton2.addEventListener("click", () => {
+        imagen1.src = "../Imagenes/minecraft_3.jpg";
+      });
+
+      /*Cambio de color ---------------------------------------------------------------------------------*/
+      let colorBoton = document.getElementById("cambiarColor");
+      let is0BE5E5 = true;
+
+      function changeColor() {
+        let body = document.body;
+        if (is0BE5E5) {
+          body.style.backgroundColor = "#5F075D";
+          is0BE5E5 = false;
+        } else {
+          body.style.backgroundColor = "#012b30";
+          is0BE5E5 = true;
+        }
+      }
+
+      /*Cambiar un texto ---------------------------------------------------------------------------------*/
+      function changeText() {
+        document.getElementById("changeText").innerHTML =
+          "SOY EL DILUVIOOOOOO, OHHHH OHHHH";
+      }
+
+      /*Aparecer un hola mundo ---------------------------------------------------------------------------*/
+      function holaMundo() {
+        document.getElementById("HolaBoton").innerHTML = "Hola mundo";
+      }
+
+      /*Escribir un texto --------------------------------------------------------------------------------*/
+
+      function escribirTexto() {
+        var miDiv = document.getElementById("miDiv");
+        miDiv.innerHTML =
+          "<h1>Este texto no lo escribió el Alan, lo escribió JavaScript</h1>";
+      }
+    </script>
+  </body>
+</html>

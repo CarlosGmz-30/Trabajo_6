@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Trabajo 2</title>
+    <style>
+        p{
+            font-size: x-large;
+            text-align: center;
+            font-family: 'Segoe UI';
+        }
+    </style>
+    
+</head>
+<body style="background-color: #008b8b;">
+    <div style="text-align: center;">
+        <img id ="imag1" src="Imagenes\leo1.jpg" width="400 px" height="400 px"/>
+        <br>
+        <button id="button1">Un Leo jejejj</button>
+        <br>
+        <button id="button2">El mismo Leo, pero es otra imagen jujujj</button>
+    </div>
+    <p style="color: midnightblue"><strong>Nombre: Leonardo Daniel Dorantes Castañeda</strong></p>
+    <p>Carrera y grupo: Desarrollo y gestión de software multiplataforma, 3°B</p>
+    <p>Correo institucional: 20223tn049@utez.edu.mx</p>
+    <p><strong>Matrícula: 20223tn049</strong></p>
+    <p>Estudios (medio superior): Bachillerato general en la Preparatoria Diurna Número 1</p>
+    <p>Pasatiempos: En mis tiempos libres soy músico, compongo, y grabo mis canciones. Me gusta mucho el cine y bueno el arte en general.</p>
+    <p>Me gusta jugar videojuegos, escuchar música y pasar tiempo con mis amigos</p>
+
+    <br><br>
+    <center>
+        <button id="changeColor1" onclick="changeColor2()"> 
+            Cambia el color del fondo jujujj
+        </button>
+
+        <br><br>
+        <p id="changeText2">¿Qué es lo que tiene el teléfono de Woody?</p>
+        <button id="changeText1" onclick="changeText1()">
+            Respuesta:)
+        </button>
+
+        <br>
+        <h2 id="Holaaa">
+            <button onclick="holaHolaMundo()">¿Qué será, qué será? Abre la cajita y lo sabrás</button>
+        </h2>
+
+        <br>
+        <div id="miDiv"></div>
+        <button onclick="textoSecreto()">Ayuda, ¿cómo me regreso al YouTube?</button>
+
+        <br><br><br>
+        <h1>5 de las mejores peliculas que he visto en lo que va del año</h1>
+        <div>
+            <img src = "Imagenes/fotoL1.jpg" alt="fotoL1" id="mainImage">
+        </div>
+        <div>
+            <button onclick="anterior()">Imagen anterior</button>
+            <button onclick="siguiente()"> Siguiente imagen</button>
+        </div>
+
+    </center>
+    
+
+    <script>
+        let colorButton = document.getElementById("changeColor1");
+        let colorN = true;
+
+        function changeColor2() {
+        let body = document.body;
+        if (colorN) {
+          body.style.backgroundColor = "#18B00E";
+          colorN = false;
+        } else {
+          body.style.backgroundColor = "#084AAF";
+          colorN = true;
+        }
+        }
+        
+        function changeText1() {
+        document.getElementById("changeText2").innerHTML =
+          "Un mensaje de Buzz jujujj";
+        }
+
+        const button1 = document.getElementById("button1");
+        const button2 = document.getElementById("button2");
+        const imag1 = document.getElementById("imag1");
+
+        button1.addEventListener("click", () => {
+            imag1.src = "Imagenes/leo1.jpg";
+        });
+
+        button2.addEventListener("click", () => {
+            imag1.src = "Imagenes/leo3.jpg";
+        });
+
+        function holaHolaMundo() {
+        document.getElementById("Holaaa").innerHTML = "Hola mundo:)";
+        }
+
+        function textoSecreto() {
+        var miDiv = document.getElementById("miDiv");
+        miDiv.innerHTML =
+          "<h1>Este texto no lo escribió ningún Leo, lo escribió JavaScript</h1>";
+        }
+
+        let fotos = new Array();
+
+        fotos[0] = new Image();
+        fotos[0].src = "Imagenes/fotoL1.jpg";
+
+        fotos[1] = new Image();
+        fotos[1].src = "Imagenes/fotoL2.jpg";
+
+        fotos[2] = new Image();
+        fotos[2].src = "Imagenes/fotoL3.jpg";
+
+        fotos[3] = new Image();
+        fotos[3].src = "Imagenes/fotoL4.jpg";
+
+        fotos[4] = new Image();
+        fotos[4].src = "Imagenes/fotoL5.jpg";
+
+        function siguiente(){
+        var img = document.getElementById("mainImage");
+        for(var i = 0; i < fotos.length;i++){
+                if(fotos[i].src == img.src){
+                    if(i === fotos.length){
+                        document.getElementById("mainImage").src = fotos[0].src;
+                        break;
+                    }
+                    document.getElementById("mainImage").src = fotos[i+1].src;
+                    break;
+                }
+            }        
+        }
+
+        function anterior(){
+        var img = document.getElementById("mainImage");
+        for(var i = fotos.length-1; i >=0 ;i--){
+                if(fotos[i].src == img.src){
+                    if(i === fotos.length){
+                        document.getElementById("mainImage").src = fotos[4].src;
+                        break;
+                    }
+                    document.getElementById("mainImage").src = fotos[i-1].src;
+                    break;
+                }
+            }
+        }   
+    </script>     
+
+</body>
+</html>
