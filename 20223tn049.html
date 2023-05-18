@@ -14,7 +14,7 @@
 </head>
 <body style="background-color: #008b8b;">
     <div style="text-align: center;">
-        <img id ="imag1" src="../Imagenes\leo1.jpg" width="400 px" height="400 px"/>
+        <img id ="imag1" src="Imagenes\leo1.jpg" width="400 px" height="400 px"/>
         <br>
         <button id="button1">Un Leo jejejj</button>
         <br>
@@ -49,6 +49,15 @@
         <div id="miDiv"></div>
         <button onclick="textoSecreto()">Ayuda, ¿cómo me regreso al YouTube?</button>
 
+        <br><br><br>
+        <h1>5 de las mejores peliculas que he visto en lo que va del año</h1>
+        <div>
+            <img src = "Imagenes/fotoL1.jpg" alt="fotoL1" id="mainImage">
+        </div>
+        <div>
+            <button onclick="anterior()">Imagen anterior</button>
+            <button onclick="siguiente()"> Siguiente imagen</button>
+        </div>
 
     </center>
     
@@ -78,11 +87,11 @@
         const imag1 = document.getElementById("imag1");
 
         button1.addEventListener("click", () => {
-            imag1.src = "../Imagenes/leo1.jpg";
+            imag1.src = "Imagenes/leo1.jpg";
         });
 
         button2.addEventListener("click", () => {
-            imag1.src = "../Imagenes/leo3.jpg";
+            imag1.src = "Imagenes/leo3.jpg";
         });
 
         function holaHolaMundo() {
@@ -95,7 +104,51 @@
           "<h1>Este texto no lo escribió ningún Leo, lo escribió JavaScript</h1>";
         }
 
-    </script>
+        let fotos = new Array();
+
+        fotos[0] = new Image();
+        fotos[0].src = "Imagenes/fotoL1.jpg";
+
+        fotos[1] = new Image();
+        fotos[1].src = "Imagenes/fotoL2.jpg";
+
+        fotos[2] = new Image();
+        fotos[2].src = "Imagenes/fotoL3.jpg";
+
+        fotos[3] = new Image();
+        fotos[3].src = "Imagenes/fotoL4.jpg";
+
+        fotos[4] = new Image();
+        fotos[4].src = "Imagenes/fotoL5.jpg";
+
+        function siguiente(){
+        var img = document.getElementById("mainImage");
+        for(var i = 0; i < fotos.length;i++){
+                if(fotos[i].src == img.src){
+                    if(i === fotos.length){
+                        document.getElementById("mainImage").src = fotos[0].src;
+                        break;
+                    }
+                    document.getElementById("mainImage").src = fotos[i+1].src;
+                    break;
+                }
+            }        
+        }
+
+        function anterior(){
+        var img = document.getElementById("mainImage");
+        for(var i = fotos.length-1; i >=0 ;i--){
+                if(fotos[i].src == img.src){
+                    if(i === fotos.length){
+                        document.getElementById("mainImage").src = fotos[4].src;
+                        break;
+                    }
+                    document.getElementById("mainImage").src = fotos[i-1].src;
+                    break;
+                }
+            }
+        }   
+    </script>     
 
 </body>
 </html>
