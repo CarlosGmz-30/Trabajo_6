@@ -1,0 +1,52 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presentacion_Gil</title>
+  </head>
+
+  <body style="background-image: url(Imagenes/Gil_Backgorund.jpg)">
+    <center>
+      <style src="css\Jayr_Gil.css"></style>
+      <img id="image" src="Imagenes\Setup_1.jpg" alt="Presentacion_Gil" />
+      <br />
+      <br />
+
+      <button onclick=" prevImage()">Anterior</button>
+      <button onclick=" nextImage()">Siguiente</button>
+
+      <script>
+        var SetupImages = [
+          "Imagenes/Setup_1.jpg",
+          "Imagenes/SetUp_2.jpg",
+          "Imagenes/SetUp_3.jpg",
+          "Imagenes/SetUp_4.jpg",
+          "Imagenes/SetUp_5.jpg",
+        ];
+        var image = document.getElementById("image");
+        var currentImage = 0;
+        function nextImage() {
+          if (currentImage < 4) {
+            currentImage++;
+            image.src = SetupImages[currentImage];
+          }else if(currentImage == 4){
+            currentImage = 0;
+            image.src = SetupImages[currentImage];
+          }
+
+        }
+        function prevImage() {
+          if (currentImage > 0) {
+            currentImage--;
+            image.src = SetupImages[currentImage];
+          }else if(currentImage == 0){
+            currentImage = 4;
+            image.src = SetupImages[currentImage];
+          }
+        }
+      </script>
+      <link rel="stylesheet" type="text/css" href="css\Jayr_Gil.css" />
+    </center>
+  </body>
+</html>
