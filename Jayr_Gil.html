@@ -18,11 +18,11 @@
 
       <script>
         var SetupImages = [
-          "Imagenes/Setup_1.jpg",
-          "Imagenes/SetUp_2.jpg",
-          "Imagenes/SetUp_3.jpg",
-          "Imagenes/SetUp_4.jpg",
-          "Imagenes/SetUp_5.jpg",
+          "../Imagenes/Setup_1.jpg",
+          "../Imagenes/SetUp_2.jpg",
+          "../Imagenes/SetUp_3.jpg",
+          "../Imagenes/SetUp_4.jpg",
+          "../Imagenes/SetUp_5.jpg",
         ];
         var image = document.getElementById("image");
         var currentImage = 0;
@@ -43,7 +43,7 @@
           }else if(currentImage == 0){
             currentImage = 4;
             image.src = SetupImages[currentImage];
-            
+
           }
         }
       </script>
