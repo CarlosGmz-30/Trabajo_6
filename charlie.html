@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Minecraft</title>
+  </head>
+  <body style="background-color: lightgray">
+    <script src="../Trabajo_6/js/charlie.js"></script>
+
+    <center>
+      <br />
+      <h1>TOP MINECRAFT MOMENTS</h1>
+      <img
+        id="Imagen-principal"
+        src="Imagenes/Minecraft_1.gif"
+        width="800"
+        style="border-radius: 10px"
+      /><br />
+      <br />
+      <button onclick="Siguiente()" style="margin-right: 10px">Anterior</button>
+      <button onclick="Anterior()" style="margin-left: 10px">Siguiente</button>
+    </center>
+
+    <script>
+      var images = [
+        "Imagenes/Minecraft_1.gif",
+        "Imagenes/Minecraft_2.gif",
+        "Imagenes/Minecraft_3.gif",
+        "Imagenes/Minecraft_4.gif",
+        "Imagenes/Minecraft_5.gif",
+      ];
+
+      var imagenElement = document.getElementById("Imagen-principal");
+      var cont = 0;
+
+      function Siguiente() {
+        if(cont==4){
+            cont = 0;
+            imagenElement.src = images[cont];
+        } else {
+            cont++;
+            imagenElement.src = images[cont];
+        }
+      }
+
+      function Anterior() {
+        if (cont == 0) {
+          cont = 4;
+          imagenElement.src = images[cont];
+        } else {
+          cont--;
+          imagenElement.src = images[cont];
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 <html>
     <body bgcolor="#2E86C1">  
         <center>
-        <img src="../Imagenes/MapacheComiendoUvas.gif" alt="Imagen de presentacion ☺" style="height: 390px; width: 440px;">
+        <img src="Imagenes/MapacheComiendoUvas.gif" alt="Imagen de presentacion ☺" style="height: 390px; width: 440px;">
         <p> Hola, mi nombre es: <strong> Diego Jesus Hernandez Palma </strong> y soy un guia explorador </p>
         <p></p>
         <p> Estoy en:  <strong> DSM - 3B </strong> ☺ </p>
@@ -116,19 +116,19 @@
           <p></p>
 
           <!-- Botones para cambiar imagenes-->
-          <img id="miImagen" src="../Imagenes/DoomEternal.jpg" alt="Mi imagen">
+          <img id="miImagen" src="Imagenes/DoomEternal.jpg" alt="Mi imagen">
 
             <script>
                 // Función para cambiar el atributo src de la imagen
                 function cambiarImagen() {
                   var imagen = document.getElementById('miImagen');
-                  imagen.src = '../Imagenes/AnimalCroasing.jpeg';
+                  imagen.src = 'Imagenes/AnimalCroasing.jpeg';
                 }
               
                 // Función para restaurar el atributo src de la imagen
                 function restaurarImagen() {
                   var imagen = document.getElementById('miImagen');
-                  imagen.src = '../Imagenes/DoomEternal.jpg';
+                  imagen.src = 'Imagenes/DoomEternal.jpg';
                 }
               </script>
 
@@ -147,6 +147,60 @@
               div.innerHTML = '<h1>Este texto no lo escribió Pino Cosmico, lo escribió JavaScript</h1>';
             }
           </script>
-          
+  <!-- Prueba de galería de fotos -->
+  <p></p>
+  <br>
+  <center>
+  <h2> Equipo Noble </h2>
+  
+<div>
+  <div id="FotoP" style="width: 500px; height: 510px;"></div>
+</div>
+
+<script>
+  var num = 0;
+  let Fotos = [
+  "url('Imagenes/Noble_1.jpg')",
+  "url('Imagenes/LogoEquipoNoble.jpg')",
+  "url('Imagenes/Noble_6.jpg')",
+  "url('Imagenes/Noble_5.jpg')",
+  "url('Imagenes/Noble_4.jpg')",
+  "url('Imagenes/Noble_3.jpg')",
+  "url('Imagenes/Noble_2.jpg')"
+];
+
+
+  // Función para cambiar el fondo de la imagen
+  function SiguienteImagen() {
+    var imagen = document.getElementById('FotoP');
+    num = num + 1;
+    if (num >= Fotos.length) {
+      num = 0;
+    }
+    imagen.style.backgroundImage = Fotos[num];
+  }
+
+  // Función para regresar a la imagen anterior
+  function RegresarImagen() {
+    var imagen = document.getElementById('FotoP');
+    num = num - 1;
+    if (num < 0) {
+      num = Fotos.length - 1;
+    }
+    imagen.style.backgroundImage = Fotos[num];
+  }
+  
+ // Cargar imagen principal al cargar la página
+ window.onload = function () {
+    num = 0; // Establecer el valor de num en 0
+    SiguienteImagen();
+  };
+</script>
+
+<br>
+
+<button id="PasarImagenBoton" onclick="SiguienteImagen()">Siguiente Imagen</button>
+<button id="RegresarImagenBoton" onclick="RegresarImagen()">Regresar Imagen</button>
+</center>
     </body>
 </html>
