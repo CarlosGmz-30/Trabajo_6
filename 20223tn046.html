@@ -125,42 +125,91 @@
     <br />
     <a href="../index.html">Pagina Principal</a>
 
-    <br>
-    <br>
+    <br />
+    <br />
     <center>
-    <button id="cambiarColor" onclick="changeColor()">
-      Cambiame de Color :3
-    </button>
+      <button id="cambiarColor" onclick="changeColor()">
+        Cambiame de Color :3
+      </button>
 
-    <br />
-    <br />
+      <br />
+      <br />
 
-    <p id="changeText">Tu eres milagro y yo soy el diluvio</p>
-    <button id="changeText1" onclick="changeText()">
-      Cambia lo que digo ;b
-    </button>
+      <p id="changeText">Tu eres milagro y yo soy el diluvio</p>
+      <button id="changeText1" onclick="changeText()">
+        Cambia lo que digo ;b
+      </button>
 
-    <br />
-    <br />
+      <br />
+      <br />
 
-    <h2 id="HolaBoton">
-      <button onclick="holaMundo()">¿?</button>
-    </h2>
+      <h2 id="HolaBoton">
+        <button onclick="holaMundo()">¿?</button>
+      </h2>
 
-    <div id="miDiv"></div>
-    <button onclick="escribirTexto()">Hola soy una inteligencia artificial</button>
-    
+      <div id="miDiv"></div>
+      <button onclick="escribirTexto()">
+        Hola soy una inteligencia artificial
+      </button>
 
-    <br><br>
-    Galeria des mi equipo Pokemon ideal y legendario favorito
-    <br>
-    <p>POKEMON</p>
-    
+      <br /><br />
+      Galeria des mi equipo Pokemon ideal y legendario favorito
+      <br />
+      <p>POKEMON</p>
 
-
-  </center>
+      <img
+        id="galeria"
+        src="Imagenes/lucario.jpg"
+        alt="Pokemon"
+        width="450, 500"
+      />
+      <br>
+      <button id="anterior" onclick="Anterior()">Anterior</button>
+      <button id="siguiente" onclick="Siguiente()">Siguiente</button>
+    </center>
 
     <script>
+      /*galeria de imagenes -----------------------------------------------------------------------------*/
+      var galeria = [
+        "lucario.jpg",
+        "pokemon.jpg",
+        "charizard.jpg",
+        "gyarados.jpg",
+        "raichu.jpg",
+        "litten.jpg",
+        "rayquaza.jpg"
+      ]
+
+      var currentIndex = 0;
+      var imageElement = document.getElementById("galeria");
+      var previousButton = document.getElementById("anterior");
+      var nextButton = document.getElementById("siguiente");
+
+      function showImage() {
+      var imagePath = "Imagenes/" + galeria[currentIndex];
+      imageElement.src = imagePath;
+     }
+
+     function Anterior(){
+      if(currentIndex > 0){
+        currentIndex--;
+        showImage();
+      }else if(currentIndex == 0){
+        currentIndex = 6;
+        showImage();
+      }
+     }
+
+     function Siguiente(){
+      if(currentIndex < galeria.length -1){
+        currentIndex++;
+        showImage();
+      }else if(currentIndex = 6){
+        currentIndex = 0;
+        showImage();
+      }
+     }
+
       /*cambio de imagen --------------------------------------------------------------------------------*/
       const boton1 = document.getElementById("boton1");
       const boton2 = document.getElementById("boton2");
