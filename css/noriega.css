@@ -1,5 +1,10 @@
 img {
-    height: 500px;
-    width: 1000px;
+    height: 600px;
+    width: 90%;
+    border-radius: 20px;
+}
+button {
+    border-color: blueviolet;
+    border-width: 5px;
     border-radius: 15px;
 }
