@@ -12,7 +12,7 @@
       <img id="image" src="Imagenes/Setup_1.jpg" alt="Presentacion_Gil" />
       <br />
       <br />
-
+      
       <button onclick=" prevImage()">Anterior</button>
       <button onclick=" nextImage()">Siguiente</button>
 
@@ -22,27 +22,27 @@
           "Imagenes/Setup_2.jpg",
           "Imagenes/Setup_3.jpg",
           "Imagenes/Setup_4.jpg",
-          "../Imagenes/Setup_5.jpg",
+          "Imagenes/Setup_5.jpg",
         ];
-        var image = document.getElementById("image");
+        var img = document.getElementById("image");
         var currentImage = 0;
         function nextImage() {
           if (currentImage < 4) {
             currentImage++;
-            image.src = SetupImages[currentImage];
+            img.src = SetupImages[currentImage];
           }else if(currentImage == 4){
             currentImage = 0;
-            image.src = SetupImages[currentImage];
+            img.src = SetupImages[currentImage];
           }
 
         }
         function prevImage() {
           if (currentImage > 0) {
             currentImage--;
-            image.src = SetupImages[currentImage];
+            img.src = SetupImages[currentImage];
           }else if(currentImage == 0){
             currentImage = 4;
-            image.src = SetupImages[currentImage];
+            img.src = SetupImages[currentImage];
 
           }
         }
