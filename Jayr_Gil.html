@@ -22,27 +22,27 @@
           "Imagenes/Setup_2.jpg",
           "Imagenes/Setup_3.jpg",
           "Imagenes/Setup_4.jpg",
-          "Imagenes/Setup_5.jpg",
+          "Imagenes/Setup_5.jpg"
         ];
         var img = document.getElementById("image");
-        var currentImage = 0;
+        var i = 0;
         function nextImage() {
-          if (currentImage < 4) {
-            currentImage++;
-            img.src = SetupImages[currentImage];
-          }else if(currentImage == 4){
-            currentImage = 0;
-            img.src = SetupImages[currentImage];
+          if (i < 4) {
+            i++;
+            img.src = SetupImages[i];
+          }else if(i == 4){
+            i = 0;
+            img.src = SetupImages[i];
           }
 
         }
         function prevImage() {
-          if (currentImage > 0) {
-            currentImage--;
-            img.src = SetupImages[currentImage];
-          }else if(currentImage == 0){
-            currentImage = 4;
-            img.src = SetupImages[currentImage];
+          if (i > 0) {
+            i--;
+            img.src = SetupImages[i];
+          }else if(i == 0){
+            i = 4;
+            img.src = SetupImages[i];
 
           }
         }
