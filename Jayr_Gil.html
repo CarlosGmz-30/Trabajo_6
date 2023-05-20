@@ -12,9 +12,9 @@
       <img id="image" src="Imagenes/Setup_1.jpg" alt="Presentacion_Gil" />
       <br />
       <br />
+      <button class = "button" style="--clr:#39FF14"  onclick ="prevImage()"> <span>Previous</span><i></i></button>
+      <button class = "button" style="--clr:#8A2BE2"  onclick ="nextImage()"> <span>  Next  </span><i></i></button>
       
-      <button onclick=" prevImage()">Anterior</button>
-      <button onclick=" nextImage()">Siguiente</button>
 
       <script>
         var SetupImages = [
@@ -22,7 +22,7 @@
           "Imagenes/Setup_2.jpg",
           "Imagenes/Setup_3.jpg",
           "Imagenes/Setup_4.jpg",
-          "Imagenes/Setup_5.jpg"
+          "Imagenes/Setup_5.jpg" 
         ];
         var img = document.getElementById("image");
         var i = 0;
