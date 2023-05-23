@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Respuesta</title>
+  </head>
+  <body style="background-color: aliceblue">
+    <center>
+      <h1>Página de respuestas</h1>
+      <h1 id="nombre"></h1>
+    </center>
+    <script>
+      getParameter = (key) => {
+        address = window.location.search;
+        parameterList = new URLSearchParams(address);
+        return parameterList.get(key);
+      };
+
+      console.log(getParameter("nameV"));
+      var nombre = document.getParameter("nameV");
+      if (nombre != null) {
+        document.getElementById("nombre").innerHTML = nombre;
+      }
+
+      console.log(getParameter("lastname"));
+      var lastname = document.getParameter("lastname");
+
+    </script>
+  </body>
+</html>
