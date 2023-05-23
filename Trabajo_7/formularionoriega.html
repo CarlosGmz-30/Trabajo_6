@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Trabajo7</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form action="respuestanoriega.html" method="get">
+        <label>Nombres:</label><input type="text" name="nombre"><br>
+        <label>Apellidos:</label><input type="text" name="apellidos"><br>
+        <label>Correo:</label><input type="email" name="correo"><br>
+        <label>Fecha de nacimiento:</label><input type="date" name="fnac"><br>
+        <label>Telefono:</label><input type="number" name="telefono"><br>
+        <label>Usuario:</label><input type="text" name="usuario"><br>
+        <label>Contraseña:</label><input type="text" name="contraseña"><br>
+        <label>Repetir Contraseña:</label><input type="text" name="confcontraseña"><br>
+        <input type="submit" value="Registrar"><br>
+    </form>
+</body>
+</html>
+<script>
+    getParameter=(key)=>{
+        address=window.location.search;
+        parameterList = new URLSearchParams(address);
+        return parameterList.get(key);
+    }
+    var nombre=getParameter("nombre");
+    var apellidos=getParameter("apellidos");
+    var correo=getParameter("correo");
+    var fnac=getParameter("fnac");
+    var telefono=getParameter("telefono");
+    var usuario=getParameter("ususario");
+    var contraseña=getParameter("contraseña");
+    var confcontraseña=getParameter("confcontraseña");
+
+    if (nombre!=null) {
+        document.getElementById("nombre").innerHTML = nombre;
+    }
+    if (apellidos!=null) {
+        document.getElementById("apellidos").innerHTML = apellidos;
+    }
+    if (correo!=null) {
+        document.getElementById("correo").href = "mailto:" + correo;
+    }
+    if (fnac!=null) {
+        let fyear=fnac.split('-');
+        let edad=(fyear[0]-2023);
+        document.getElementById("edad").innerHTML = edad + " años";
+    }
+    if (contraseña < 5) {
+        document.getElementById("contraseña").innerHTML = "CONTRASEÑA INSEGURA";
+    }
+</script>
