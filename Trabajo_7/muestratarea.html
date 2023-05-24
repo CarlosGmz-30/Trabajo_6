@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Muestra tarea</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<body style="background-color: lightskyblue;">
+    <center><h1>Página de muestra</h1></center>
+    <h1 id="mensajeNombre"></h1>
+    <h2 id="mensajeApe1"></h2>
+    <h2 id="mensajeApe2"></h2>
+    <a id="emailX" href="mailto:email">Enviar correo;</a>
+    <br><br>
+    <a id="telefonoX" href="tel:">Llamar;</a>
+    <h3 id="edad"></h3>
+    <script>
+        getParameter = (secret) => {
+            address = window.location.search;
+            parameterList = new URLSearchParams(address);
+            return parameterList.get(secret);
+        }
+        console.log(getParameter("nombre"));
+        console.log(getParameter("ape1"));
+        console.log(getParameter("ape2"));
+        console.log(getParameter("email"));
+        console.log(getParameter("fenac"));
+        console.log(getParameter("telefono"));
+        console.log(getParameter("usuario"));
+        console.log(getParameter("pass1"));
+        console.log(getParameter("passX"));
+        var nombre =  getParameter("nombre");
+        var ape1 =  getParameter("ape1");
+        var ape2 =  getParameter("ape2");
+        var email =  getParameter("email");
+        var fenac =  getParameter("fenac");
+        var telefono =  getParameter("telefono");
+        var usuario =  getParameter("usuario");
+        var pass1 =  getParameter("pass1");
+        var passX =  getParameter("passX");
+        if(nombre!=null){
+            document.getElementById("mensajeNombre").innerHTML=nombre;
+        }
+        if(ape1!=null){
+            document.getElementById("mensajeApe1").innerHTML=ape1;
+        }
+        if(ape2!=null){
+            document.getElementById("mensajeApe2").innerHTML=ape2;
+        }
+        if(email!=null){
+            document.getElementById("emailX").href="mailto:"+email;
+        }
+        if(telefono!=null){
+            document.getElementById("telefonoX").href="tel:"+telefono;
+        }
+        if(fenac!=null){
+            var cumple = getParameter(fenac);
+            var hoy = new Date();
+            var año = fenac.split('-');
+            var edad = hoy.getFullYear()-año[0];
+            var meses = hoy.getMonth()-año[1];
+            if(meses<0){
+                edad--;
+            }
+            if(hoy.getFullYear()!=año[0]){
+                document.getElementById("edad").innerHTML="Su edad es: "+edad;
+            }     
+        }
+        if(pass1!=null){
+            if(pass1.length<5){
+                alert("Advertencia: Tu contraseña es insegura");
+            }
+        }
+    </script>
+</body>
+</html>

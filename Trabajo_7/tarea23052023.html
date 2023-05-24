@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 23052023</title>
+</head>
+<body style="background-color: lightgreen;">
+    <center>
+        <h1 id="mensaje">Formulario de registro de una persona: </h1>
+        <br>
+    </center>
+    <form action="muestratarea.html" method="get">
+        <label>Nombre: </label><input type="text" name="nombre"><br><br>
+        <label>Apellido 1: </label><input type="text" name="ape1"><br><br>
+        <label>Apellido 2: </label><input type="text" name="ape2"><br><br>
+        <label>Correo: </label><input type="email" name="email"><br><br>
+        <label>Fecha de nacimiento: </label><input type="date" name="fenac"><br><br>
+        <label>Teléfono: </label><input type="number" name="telefono"><br><br>
+        <label>Nombre de usuario: </label><input type="text" name="usuario"><br><br>
+        <label>Contraseña: </label><input type="password" name="pass1"><br><br>
+        <label>Repetir contraseña: </label><input type="password" name="passX"><br><br>
+        <input type="submit" value="Registrarse">
+    </form>
+
+    <script>
+        getParameter = (secret) => {
+            address = window.location.search;
+            parameterList = new URLSearchParams(address);
+            return parameterList.get(secret);
+        }
+        console.log(getParameter("nombre"));
+        console.log(getParameter("ape1"));
+        console.log(getParameter("ape2"));
+        console.log(getParameter("email"));
+        console.log(getParameter("fenac"));
+        console.log(getParameter("telefono"));
+        console.log(getParameter("usuario"));
+        console.log(getParameter("pass1"));
+        console.log(getParameter("passX"));
+        var nombre =  getParameter("nombre");
+        var ape1 =  getParameter("ape1");
+        var ape2 =  getParameter("ape2");
+        var email =  getParameter("email");
+        var fenac =  getParameter("fenac");
+        var telefono =  getParameter("telefono");
+        var usuario =  getParameter("usuario");
+        var pass1 =  getParameter("pass1");
+        var passX =  getParameter("passX");
+    </script>
+</body>
+</html>
