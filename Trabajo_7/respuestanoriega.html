@@ -7,13 +7,15 @@
     <title>Respuesta de Formulario</title>
 </head>
 <body>
-    <h1 id="nombre"></h1>  
-    <h2 id="apellidos"></h2>
-    <a id = "correo" href="">Enviar Correo</a>
-    <a id = "telefono" href="tel:"></a>
-    <h3 id="fnac"></h3>
-    <h3 id="edad"></h3>
-    <h3 id="contraseña"></h3>
+    <center>
+    <h1 id="usuario"></h1><br>
+    <h1 id="nombre"></h1><br>
+    <h2 id="apellidos"></h2><br>
+    <a id = "correo" href="">Enviar Correo</a><br>
+    <a id = "telefono" href="tel:">Telefono</a><br>
+    <h3 id="edad"></h3><br>
+    <h3 id="contraseña"></h3><br>
+</center>
 </body>
 </html>
 <script>
@@ -27,10 +29,12 @@
     var correo=getParameter("correo");
     var fnac=getParameter("fnac");
     var telefono=getParameter("telefono");
-    var usuario=getParameter("ususario");
+    var usuario=getParameter("usuario");
     var contraseña=getParameter("contraseña");
     var confcontraseña=getParameter("confcontraseña");
-
+    if (usuario!=null) {
+        document.getElementById("usuario").innerHTML = usuario;
+    }
     if (nombre!=null) {
         document.getElementById("nombre").innerHTML = nombre;
     }
@@ -38,14 +42,24 @@
         document.getElementById("apellidos").innerHTML = apellidos;
     }
     if (correo!=null) {
+        document.getElementById("correo").innerHTML = "Enviar correo a: " + correo;
         document.getElementById("correo").href = "mailto:" + correo;
+    }
+    if (telefono!=null) {
+        document.getElementById("telefono").innerHTML = "Llamar a: " + telefono;
+        document.getElementById("telefono").href = "tel:" + telefono;
     }
     if (fnac!=null) {
         let fyear=fnac.split('-');
         let edad=(fyear[0]-2023);
         document.getElementById("edad").innerHTML = edad + " años";
     }
-    if (contraseña < 5) {
-        document.getElementById("contraseña").innerHTML = "CONTRASEÑA INSEGURA";
+    if (contraseña != null){
+        document.getElementById("contraseña").innerHTML = "Contraseña: " + contraseña;
+        if (contraseña != confcontraseña) {
+        alert("Las contraseñas no coinciden");
+    } else if (contraseña.length < 5) {
+      alert("La contraseña es insegura");
+    }
     }
 </script>
