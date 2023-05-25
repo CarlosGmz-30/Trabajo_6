@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T7_Muestra</title>
+  </head>
+  <body>
+    <h1>Usuario registrado:</h1>
+    <h1 id="name"></h1>
+    <p> Apellidos:</p>
+    <h2 id="surname1"></h2>
+    <h2 id="surname2"></h2>
+    <p> Nombre de usuario:</p>
+    <h3 id="user"></h3>
+    <p> Edad:</p>
+    <h3 id="birthday"></h3>
+    <p> Correo:</p>
+    <a href="mailto:mail" id="mail"></a>
+    <br />
+    <p> Telefono:</p>
+    <a href="tel:phoneNumber" id="phoneNumber"></a>
+
+    <script>
+      getParameter = (key) => {
+        address = window.location.search;
+        parameterlist = new URLSearchParams(address);
+        return parameterlist.get(key);
+      };
+
+      console.log(getParameter("name"));
+      console.log(getParameter("surname1"));
+      console.log(getParameter("surname2"));
+      console.log(getParameter("birthday"));
+      console.log(getParameter("user"));
+      console.log(getParameter("password"));
+      console.log(getParameter("passwordRepit"));
+      console.log(getParameter("mail"));
+      console.log(getParameter("phoneNumber"));
+
+      var name = getParameter("name");
+      var surname1 = getParameter("surname1");
+      var surname2 = getParameter("surname2");
+      var birthday = getParameter("birthday");
+      var user = getParameter("user");
+      var password = getParameter("password");
+      var passwordRepit = getParameter("passwordRepit");
+      var mail = getParameter("mail");
+      var phoneNumber = getParameter("phoneNumber");
+
+      if (name != null) {
+        document.getElementById("name").innerHTML = name;
+      }
+      if (surname1 != null) {
+        document.getElementById("surname1").innerHTML = surname1;
+      }
+      if (surname2 != null) {
+        document.getElementById("surname2").innerHTML = surname2;
+      }
+
+      if (birthday != null) {
+        var date = new Date();
+        var currentYear = date.getFullYear();
+        console.log(currentYear); // para ver el año actual en la consola
+
+        document.getElementById("birthday");
+        birthday = birthday.split("-");
+        var age = currentYear - birthday[0];
+        document.getElementById("birthday").innerHTML = age + " años";
+      }
+
+      if (mail != null) {
+        document.getElementById("mail").innerHTML = mail;
+      }
+
+      if (phoneNumber != null) {
+        document.getElementById("phoneNumber").innerHTML = phoneNumber;
+      }
+
+      if (user != null) {
+        document.getElementById("user").innerHTML = user;
+      }
+
+      if (password != passwordRepit) {
+        alert("Las password no coinciden");
+      } else if (password.length < 5) {
+        alert("La password no es segura, usa una con 5 o mas caracters");
+      }
+    </script>
+  </body>
+</html>
