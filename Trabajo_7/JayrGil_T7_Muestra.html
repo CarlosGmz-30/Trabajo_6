@@ -18,7 +18,7 @@
       <p>Edad:</p>
       <h3 id="birthday"></h3>
       <p>Correo:</p>
-      <a href="mailto:mail" id="mail"></a>
+      <a id="mail" href="" >Enviar correo</a>
       <br />
       <p>Telefono:</p>
       <a href="tel:phoneNumber" id="phoneNumber"></a>
@@ -72,7 +72,7 @@
         }
 
         if (mail != null) {
-          document.getElementById("mail").innerHTML = mail;
+          document.getElementById("mail").href = "mailto:" + mail;
         }
 
         if (phoneNumber != null) {
