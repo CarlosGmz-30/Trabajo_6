@@ -1,0 +1,128 @@
+<!-- Pagina Prueba Cuestionario 3120 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body bgcolor="#D8BFD8">
+        <center>
+        <h3>Ayuda me converti en una mesa</h3>
+        
+        <h1 id = "Usuario_Reg"></h1>
+        <p>------------------------------------------</p>
+        <p>Tu nombre es: <h1 id="Nombre_Reg"></h1></p>
+        <p>Tu primer apellido es: <h2 id="Apellido_uno"></h2></p>
+        <p>Tu segundo apellido es: <h2 id="Apellido_dos"></h2></p>
+        <p>------------------------------------------</p>
+        <p id="resultado"></p>
+        <p>------------------------------------------</p>
+        <strong id ="verificacion"></strong><br>
+        <p></p>
+        <button id="btnEnviarCorreo"></button><br>
+        <p></p>
+        <button id="btnMarcar"></button><br>
+
+        </center>
+        <script>
+            getParameter = (key) => { 
+            address = window.location.search;
+            ParameterList = new URLSearchParams(address);
+            return ParameterList.get(key);
+            }
+            //
+            console.log(getParameter("nombre"));
+            //
+            var nombre = getParameter ("nombre");
+
+            var apellido1 = getParameter ("apellido1");
+            var apellido2 = getParameter ("apellido2");
+
+            var correo = getParameter ("correo");
+            var telefono = getParameter ("telefono");
+
+            var FechaDeNacimiento = getParameter("FechaDeNacimiento");
+
+            var ususario = getParameter ("usuario");
+
+            var contrasenia = getParameter ("contrasenia");
+            var RepetiContrasenia = getParameter ("RepetiContrasenia");
+            //Mostrar el nombre de usuario
+            if (ususario != null){
+                document.getElementById("Usuario_Reg").innerHTML=ususario;
+            }
+            //imprimir nombres con h1, apellidos con h2
+            if (nombre != null){
+                document.getElementById("Nombre_Reg").innerHTML=nombre;
+            }
+            if (apellido1 != null){
+                document.getElementById("Apellido_uno").innerHTML=apellido1;
+            }
+            if (apellido2 != null){
+                document.getElementById("Apellido_dos").innerHTML=apellido2;
+            }
+            //mandar correo con --mailto="email"-- y numero de telefono, tel:"telefono"
+
+            if (correo != null) {
+                var btnEnviarCorreo = document.createElement("button");
+                btnEnviarCorreo.innerText = "Enviar correo";
+                btnEnviarCorreo.addEventListener("click", function() {
+                window.location.href = "mailto:" + correo;
+            });
+            document.getElementById("btnEnviarCorreo").appendChild(btnEnviarCorreo);
+            }
+            //telefono
+            if (telefono != null) {
+                var btnMarcar = document.createElement("button");
+                btnMarcar.innerText = "Marcar";
+                btnMarcar.addEventListener("click", function() {
+                window.location.href = "tel:" + telefono;
+            });
+
+            document.getElementById("btnMarcar").appendChild(btnMarcar);
+
+            } 
+
+            //calcular edad actual
+            if (FechaDeNacimiento != null){
+                var fechaNacimiento = FechaDeNacimiento;
+                var fechaActual = new Date();
+                var fechaNac = new Date(fechaNacimiento);
+
+                var edad = fechaActual.getFullYear() - fechaNac.getFullYear();
+                    
+                // Verificar si aún no ha pasado el cumpleaños de este año
+                if (fechaActual.getMonth() < fechaNac.getMonth() || (fechaActual.getMonth() === fechaNac.getMonth() && fechaActual.getDate() < fechaNac.getDate())) {
+                    edad--;
+                }
+                if (edad <= 110){
+                document.getElementById("resultado").innerHTML = "Tu edad actual es: " + edad;
+                }else{
+                    alert("Estas seguro de tu edad? \n Probablemente seas una escalera");
+                }
+            }
+
+            //si la contrasenia es menor a 5 caracteres mandar mensaje de advertencia
+            if (contrasenia && RepetiContrasenia != null) {
+
+                if (contrasenia === RepetiContrasenia) {
+
+                    if (contrasenia.length > 5 || RepetiContrasenia.length > 5) {
+                        document.getElementById("verificacion").innerHTML = '<span style="color: green;">Contraseña válida</span>';
+                    } else {
+                        alert("Tu contrasenia es muy poco segura \n Quieres continuar?")
+                        document.getElementById("verificacion").innerHTML = '<span style="color: green;">Contraseña válida</span>';
+
+                    }
+                } else {
+                    alert("Los valores de tu contrasenia no coinciden");
+                    document.getElementById("verificacion").innerHTML = '<span style="color: red;">Contraseña no válida</span>';
+
+                }
+            }
+        </script>
+    </body>
+</html>
