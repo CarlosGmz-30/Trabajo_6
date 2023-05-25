@@ -1,0 +1,109 @@
+<!-- Trabajo 7 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="#F5F5F5">
+    <center>
+    <h1>Formulario :D</h1>
+    <form action="Tarea7_Cuestionario.html" method="get">
+        <label>Nombres:      </label><input type ="text" name= "nombre"><br>
+        <p></p>
+        <label>Apellido 1:      </label><input type ="text" name="apellido1"><br>
+        <p></p>
+        <label>Apellido 2:      </label><input type ="text" name="apellido2"><br>
+        <p></p>
+        <label>Correo:    </label><input type ="email" name="correo"><br>
+        <p></p>
+        <label>Fecha de nacimiento: </label><input type ="date" name="FechaDeNacimiento"><br>
+        <!--
+            <label>Fecha de nacimiento: </label><input type ="date" name="FechaDeNacimiento"><br>
+        <h1>Calculadora de Edad</h1>
+        <label>Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento">
+        <button onclick="calcularEdad()">Calcular</button>
+        <p id="resultado"></p>
+        -->
+        <p></p>
+        <label>Telefono:      </label><input type ="number" name= "telefono"><br>
+        <p></p>
+        <label>Usuario:      </label><input type ="text" name= "usuario"><br>
+        <p></p>
+        <label>contraseña:      </label><input type ="password" name= "contrasenia"><br>
+        <p></p>
+        <label>Repite tu Contraseña:      </label><input type ="password" name= "RepetiContrasenia"><br>
+        <p></p>
+        <input type="submit" value="Registrarse">
+    </form>
+    </center>
+
+    <script>
+        getParameter = (key) => { 
+        address = window.location.search;
+        ParameterList = new URLSearchParams(address);
+        return ParameterList.get(key);
+        }
+        //
+        //ususario
+        var ususario = getParameter ("usuario");
+        //nombres
+        var nombre = getParameter ("nombre");
+        //Apellidos
+        var apellido1 = getParameter ("apellido1");
+        var apellido2 = getParameter ("apellido2");
+        //Correo
+        var correo = getParameter ("correo");
+        //telefono
+        var telefono = getParameter ("telefono");
+        //edad
+        var FechaDeNacimiento = getParameter ("FechaDeNacimiento");
+        //contrasenia
+        var contrasenia = getParameter ("contrasenia");
+        var RepetiContrasenia = getParameter ("RepetiContrasenia");
+        //
+        console.log(getParameter("nombre"));
+        console.log(getParameter("apellido1"));
+        console.log(getParameter("apellido2"));
+        console.log(getParameter("correo"));
+        console.log(getParameter("telefono"));
+        console.log(getParameter("FechaDeNacimiento"));
+        console.log(getParameter("contrasenia"));
+        console.log(getParameter("RepetiContrasenia"));
+        //
+        //imprimir nombres con h1, apellidos con h2
+        if (nombre != null){
+            document.getElementById("nombrePagina").innerHTML=nombre;
+        }
+        if (apellido1 != null){
+            document.getElementById("nombrePagina").innerHTML=apellido1;
+        }
+        if (apellido2 != null){
+            document.getElementById("nombrePagina").innerHTML=apellido2;
+        }
+        //mandar correo con --mailto="email"-- y numero de telefono, tel:"telefono"
+        //calcular edad actual
+        //si la contrasenia es menor a 5 caracteres mandar mensaje de advertencia
+
+        //
+        
+    </script>
+    <!--
+    <script>
+        getParameter = (key) => { 
+        address = window.location.search;
+        ParameterList = new URLSearchParams(address);
+        return ParameterList.get(key);
+        }
+        console.log(getParameter("nombre"));
+        var nombre = getParameter ("nombre")
+        if (nombre != null){
+            document.getElementById("mensaje").innerHTML=nombre;
+        }
+    </script> -->
+    
+</body>
+</html>
