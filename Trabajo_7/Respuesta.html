@@ -1,29 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Respuesta</title>
-  </head>
-  <body style="background-color: aliceblue">
-    <center>
-      <h1>Página de respuestas</h1>
-      <h1 id="nombre"></h1>
-    </center>
-    <script>
-      getParameter = (key) => {
-        address = window.location.search;
-        parameterList = new URLSearchParams(address);
-        return parameterList.get(key);
-      };
 
-      console.log(getParameter("nameV"));
-      var nombre = document.getParameter("nameV");
-      if (nombre != null) {
-        document.getElementById("nombre").innerHTML = nombre;
-      }
+<head>
+  <title>Respuesta</title>
+</head>
 
-      console.log(getParameter("lastname"));
-      var lastname = document.getParameter("lastname");
+<body style="background-color: antiquewhite">
 
-    </script>
-  </body>
+  <center>
+    <h1>DATOS REGISTRADOS:</h1>
+    <hr>
+    <p><Strong>Nombre:</Strong></p>
+    <h1 id="nombre"></h1>
+    <hr>
+    <p><Strong>Apellidos:</Strong></p>
+    <h2 id="apellido"></h2>
+    <hr>
+    <p><Strong>Edad:</Strong></p>
+    <p id="edad"></p>
+    <hr>
+    <p><Strong>Enviar correo a:</Strong></p> 
+    <a id="correo" href="">correo</a>
+    <hr>
+    <p><Strong>Llamar a:</Strong></p>
+    <a id="tel" href="">Teléfono</a>
+    <hr>
+    <p id="contraseña"></p>
+
+  </center>
+
+  <script>
+    getParameter = (key) => {
+      address = window.location.search;
+      parameterList = new URLSearchParams(address);
+      return parameterList.get(key);
+    };
+
+    console.log(getParameter("nameV"));
+    var nombre = getParameter("nameV");
+    if (nombre != null) {
+      document.getElementById("nombre").innerHTML = nombre;
+    }
+
+    console.log(getParameter("lastnameV"));
+    var lastname = getParameter("lastnameV");
+    if (lastname != null) {
+      document.getElementById("apellido").innerHTML = lastname;
+    }
+
+    console.log(getParameter("emailV"));
+    var email = getParameter("emailV");
+    if (email != null) {
+      document.getElementById("correo").href = "mailto:" + email;
+    }
+
+
+    console.log(getParameter("telephoneV"));
+    var phone = getParameter("telephoneV");
+    if (phone != null) {
+      document.getElementById("tel").href = "tel:" + phone;
+    }
+
+    console.log(getParameter("passwordV"));
+    console.log(getParameter("repeatpasswordV"));
+    var contraseña = getParameter("passwordV");
+    var repeatpasswordV = getParameter("repeatpasswordV");
+    if (contraseña != repeatpasswordV) {
+      alert("Las contraseñas son diferentes");
+    } else if (contraseña.length < 5) {
+      alert("La contraseña es insegura");
+    }
+
+    console.log(getParameter("dateV"));
+    var date = getParameter("dateV");
+    var fecha = new Date(date);
+    var año = fecha.getFullYear();
+
+    var fechaHoy = new Date();
+    var añoHoy = fechaHoy.getFullYear();
+
+    if (date != null) {
+      document.getElementById("edad").innerHTML = añoHoy - año;
+    }
+
+  </script>
+</body>
+
 </html>
