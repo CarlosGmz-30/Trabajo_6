@@ -27,72 +27,7 @@
         ><input type="password" name="passwordRepit" /><br /><br />
         <input type="submit" value="Registrar usuario" /> <br /><br />
       </form>
-    </center>
-    <script>
-      getParameter = (key) => {
-        address = window.location.search;
-        parameterlist = new URLSearchParams(address);
-        return parameterlist.get(key);
-      };
-
-      console.log(getParameter("name"));
-      console.log(getParameter("surname1"));
-      console.log(getParameter("surname2"));
-      console.log(getParameter("birthday"));
-      console.log(getParameter("user"));
-      console.log(getParameter("password"));
-      console.log(getParameter("passwordRepit"));
-      console.log(getParameter("mail"));
-      console.log(getParameter("phoneNumber"));
-
-      var name = getParameter("name");
-      var surname1 = getParameter("surname1");
-      var surname2 = getParameter("surname2");
-      var birthday = getParameter("birthday");
-      var user = getParameter("user");
-      var password = getParameter("password");
-      var passwordRepit = getParameter("passwordRepit");
-      var mail = getParameter("mail");
-      var phoneNumber = getParameter("phoneNumber");
-
-      if (name != null) {
-        document.getElementById("name").innerHTML = name;
-      }
-      if (surname1 != null) {
-        document.getElementById("surname1").innerHTML = surname1;
-      }
-      if (surname2 != null) {
-        document.getElementById("surname2").innerHTML = surname2;
-      }
-
-      if (birthday != null) {
-        var date = new Date();
-        var currentYear = date.getFullYear();
-        console.log(currentYear); // para ver el año actual en la consola
-
-        document.getElementById("birthday");
-        birthday = birthday.split("-");
-        var age = currentYear - birthday[0];
-        document.getElementById("birthday").innerHTML = age;
-      }
-
-      if (mail != null) {
-        document.getElementById("mail").innerHTML = mail;
-      }
-
-      if (phoneNumber != null) {
-        document.getElementById("phoneNumber").innerHTML = phoneNumber;
-      }
-
-      if (user != null) {
-        document.getElementById("user").innerHTML = user;
-      }
-
-      if (password != passwordRepit) {
-        alert("Las password no coinciden");
-      } else if (password.length < 5) {
-        alert("La password no es segura, usa una con 5 o mas caracters");
-      }
-    </script>
+    
+   
   </body>
 </html>
