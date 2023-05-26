@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+
+    <style>
+
+body {
+background-color: lightslategrey;
+}
+
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1 id="nombre1"></h1>
+      <h2 id="a1"></h2>
+      <h2 id="a2"></h2>
+      <a id="correo1" href="">Mandame correo ;3</a>
+      <br><br>
+      Edad: <p id="nac1"></p>
+      <br />
+      Llamar <a id="tel" href="">aqui</a>
+      <br />
+      Datos de la cuenta:
+      <h1 id="u"></h1>
+      <br />
+      <p id="contrasenia"></p>
+    </center>
+  </body>
+  <script>
+    getParameter = (key) => {
+      address = window.location.search;
+      parameterList = new URLSearchParams(address);
+      return parameterList.get(key);
+    };
+
+    console.log(getParameter("nombre"));
+    var nombre = getParameter("nombre");
+    if (nombre != null) {
+      document.getElementById("nombre1").innerHTML = nombre;
+    }
+
+    console.log(getParameter("apellidoP"));
+    var apellidoP = getParameter("apellidoP");
+    if (apellidoP != null) {
+      document.getElementById("a1").innerHTML = apellidoP;
+    }
+
+    console.log(getParameter("apellidoM"));
+    var apellidoM = getParameter("apellidoM");
+    if (apellidoM != null) {
+      document.getElementById("a2").innerHTML = apellidoM;
+    }
+
+    console.log(getParameter("correo"));
+    var correo = getParameter("correo");
+    if (correo != null) {
+      document.getElementById("correo1").href = "mailto:" + correo;
+    }
+
+    console.log(getParameter("nac"));
+    var date = getParameter("nac");
+    var fecha = new Date(date);
+    var año = fecha.getFullYear();
+
+    var fechaHoy = new Date();
+    var añoHoy = fechaHoy.getFullYear();
+
+    if (date != null) {
+      document.getElementById("nac1").innerHTML = añoHoy - año;
+    }
+
+    console.log(getParameter("telefono"));
+    var telefono = getParameter("telefono");
+    if (telefono != null) {
+      document.getElementById("tel").href = "tel:" + telefono;
+    }
+
+    console.log(getParameter("usuario"));
+    var usuario = getParameter("usuario");
+    if (usuario != null) {
+      document.getElementById("u").innerHTML = usuario;
+    }
+
+    console.log(getParameter("contra"));
+    console.log(getParameter("rContra"));
+    var contra = getParameter("contra");
+    var rContra = getParameter("rContra");
+
+    if (contra && rContra != null) {
+
+      if(contra === rContra){
+
+        if(contra.length > 5 || rContra.length > 5){
+
+          document.getElementById("contrasenia").innerHTML = '<span style="color: green;">Contraseña válida</span>';
+
+        }else{
+
+          alert("Tu contraseña es poco segura");
+          document.getElementById("contrasenia").innerHTML = '<span style="color: orange;">Contraseña válida</span>';
+
+        }
+
+      }else{
+
+        alert("Las contraseñas no coinciden");
+        document.getElementById("contrasenia").innerHTML = '<span style="color: red;">Contraseña no válida</span>';
+
+      }
+    
+    }
+  </script>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h1>Formulario</h1>
+      <form action="form_alan..html" method="get">
+        <table>
+          <tr>
+            <td><label>Nombre:</label></td>
+            <td><input type="text" name="nombre"/></td>
+          </tr>
+          <tr>
+            <td><label>Apellido Paterno:</label></td>
+            <td><input type="text" name="apellidoP" /></td>
+          </tr>
+          <tr>
+            <td><label>Apellido Materno:</label></td>
+            <td><input type="text" name="apellidoM" /></td>
+          </tr>
+          <tr>
+            <td><label>Correo:</label></td>
+            <td><input type="email" name="correo" /></td>
+          </tr>
+          <tr>
+            <td><label>Fecha de nacimiento:</label></td>
+            <td><input type="date" name="nac"></td>
+          </tr>
+          <tr>
+            <td><label>Telefono:</label></td>
+            <td><input type="number" name="telefono" /></td>
+          </tr>
+          <tr>
+            <td><label>Usuario:</label></td>
+            <td><input type="text" name="usuario" /></td>
+          </tr>
+          <tr>
+            <td><label>Contraseña:</label></td>
+            <td><input type="password" name="contra" /></td>
+          </tr>
+          <tr>
+            <td><label>Repetir Contraseña:</label></td>
+            <td><input type="password" name="rContra" /></td>
+          </tr>
+        </table>
+        <br />
+        <input type="submit" value="Registar" />
+      </form>
+    </center>
+  </body>
+  <script>
+
+getParameter = (key) => {
+      address = window.location.search;
+      parameterList = new URLSearchParams(address);
+      return parameterList.get(key);
+    };
+
+    console.log(getParameter("nombre"));
+    console.log(getParameter("apellidoP"));
+    console.log(getParameter("apellidoM"));
+    console.log(getParameter("correo"));
+    cosole.log(getParameter("nac"));
+    console.log(getParameter("telefono"));
+    console.log(getParameter("usuario"));
+    console.log(getParameter("contra"));
+    console.log(getParameter("rContra"));
+
+    var nombre = getParameter("nombre");
+    var apellidoP = getParameter("apellidoP");
+    var apellidoM = getParameter("apellidoM");
+    var correo = getParameter("correo");
+    var nac = getParameter("nac");
+    var telefono = getParameter("telefono");
+    var usuario = getParameter("usuario");
+    var contra = getParameter("contra");
+    var rContra = getParameter("rContra");
+
+
+
+
+  </script>
+</html>
